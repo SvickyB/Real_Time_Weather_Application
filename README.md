@@ -1,133 +1,140 @@
-# Real-Time Weather Application
+# Real-Time Weather Application 🌤️
 
-## Overview
-This is a real-time weather application that provides users with weather data for six major metropolitan cities, along with user-specified locations. The application fetches weather data at regular intervals and supports alert configurations based on user-defined criteria.
+A modern weather dashboard that provides real-time weather updates for Indian metropolitan cities and custom locations, with configurable weather alerts.
 
-## Features
-- Automatically fetches weather data for six metropolitan cities: Delhi, Mumbai, Chennai, Bangalore, Kolkata, and Hyderabad.
-- Users can search for additional cities and view their weather data.
-- Weather information includes:
-  - Wind speed
+## ✨ Key Features
+
+- **Pre-configured Cities:** Automatic weather updates for Delhi, Mumbai, Chennai, Bangalore, Kolkata, and Hyderabad
+- **Custom City Search:** Add and monitor any city of your choice
+- **Comprehensive Weather Data:**
+  - Current temperature (with unit conversion: °C/°F/K)
   - Feels like temperature
-  - Minimum and maximum temperature
+  - Wind speed
   - Humidity
-  - Current temperature in Celsius
-  - 5-day forecast with dynamic weather icons
-- Users can switch temperature units between Celsius, Kelvin, and Fahrenheit.
-- Alert configuration:
-  - Users can set alerts based on city name, temperature thresholds, and weather conditions.
-  - Alerts are triggered and emailed to users until deleted.
-  - Alerts are fetched automatically every 10 minutes.
-- Users can create, delete, and view current alerts, including viewing triggered alerts.
+  - Daily min/max temperature
+  - 5-day forecast with weather icons
+- **Smart Alerts System:**
+  - Set custom temperature thresholds
+  - Monitor specific weather conditions
+  - Email notifications
+  - 10-minute update frequency
 
-## Technologies Used
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express
-- **Database**: PostgreSQL
-- **Others**: Axios (for API requests), Nodemailer (for email notifications)
-
-## Installation
+## 🚀 Quick Start Guide
 
 ### Prerequisites
+
 - Node.js
 - PostgreSQL
-- Docker (optional for containerized setup)
+- Docker (optional)
 
-### Setting Up the Application
+### Installation Steps
 
-###Clone the repository:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-git clone https://github.com/SvickyB/Real_Time_Weather_Application.git
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/SvickyB/Real_Time_Weather_Application.git
+   ```
 
-###Install Dependencies
-~~~~~~~~~~~~~~~~~~~~~~~~
-**For Frontend**
-   cd frontend  // Navigate to your frontend project path
-   npm install  // Install required depedencies for frontend
-   npm start    // Start the frontend
+2. **Set Up Frontend**
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
 
+3. **Set Up Backend**
+   ```bash
+   cd ../backend
+   npm install
+   ```
 
-#### Backend
-**For Backend**
-   cd ..  // navigate to previous path
-   cd backend    // Navigate to your backend project path
-   npm install   // Install required depedencies for backend
+4. **Database Setup**
+   - Create a PostgreSQL database:
+     ```sql
+     CREATE DATABASE weatherapp;
+     ```
+   - Tables will be created automatically on server start
 
-#### Database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Create the PostgreSQL Database:**
-    
-    Open your PostgreSQL client (e.g., pgAdmin or psql).
-        OR
-    Create a new database using the following command:
-    
-    CREATE DATABASE weatherapp;  // As per your choice
-    Adjust the database name in the backend .env file if necessary.
-    Automatically Create Required Tables:
-    
-    The application is configured to automatically create the required tables if they do not exist when the server starts.
+5. **Configure Environment Variables**
+   Create a `.env` file in the backend folder:
+   ```env
+   # Database
+   DB_USER=your_username
+   DB_HOST=your_host
+   DB_NAME=your_db_name
+   DB_PASSWORD=your_password
+   DB_PORT=5432
 
-**Deployment**
-~~~~~~~~~~~~~~~~~~~~~~~
-    node server.js   // Start the server:
+   # API
+   WEATHER_API_KEY=your_openweathermap_key
 
-**Design Choices**
-    Frontend: React was chosen for its component-based architecture, making the UI reusable and maintainable. Tailwind CSS was used for rapid UI development and customization.
-    Backend: Express was selected for its simplicity and efficiency in building RESTful APIs.
-    Database: PostgreSQL was chosen for its reliability and support for complex queries.
-    Email Notifications: Nodemailer was implemented for sending alert notifications via email.
+   # Server
+   PORT=5000
 
-**Dependencies**
-    Frontend
-    React
-    Tailwind CSS
-    Axios
-    Backend
-    Express
-    dotenv
-    cors
-    pg (for PostgreSQL integration)
-    nodemailer (for sending emails)
+   # Email
+   EMAIL_USER=your_email
+   EMAIL_PASS=your_app_password
+   ```
 
-**Usage**
-1. **Accessing the Application**
-   - Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the frontend of the weather application.
+6. **Start the Server**
+   ```bash
+   node server.js
+   ```
 
-2. **Viewing Weather Data**
-   - The application will automatically fetch initial weather data for six major metropolitan cities every 5 minutes. You can view current weather conditions, including temperature, humidity, wind speed, and a 5-day forecast.
+## 💡 How to Use
 
-3. **Searching for Cities**
-   - Use the search bar to find weather data for various cities. Simply enter the city name and hit "Enter" or click the search icon to retrieve the relevant information.
+1. **Access the Dashboard**
+   - Open `http://localhost:3000` in your browser
+   - View real-time weather data for metropolitan cities
 
-4. **Configuring Alerts**
-   - Navigate to the alert management section to configure alerts. You can set alerts by specifying:
-     - **City Name**: The city for which you want to receive weather alerts.
-     - **Temperature Threshold**: Set a minimum or maximum temperature that will trigger the alert.
-     - **Conditions**: Specify weather conditions (e.g., rain, snow) that you want to monitor.
-     - **Email Address**: Enter the email address where you want to receive alert notifications.
+2. **Search Cities**
+   - Use the search bar to find any city
+   - Click the search icon or press Enter
 
-5. **Alert Notifications**
-   - The application will check for alerts every 10 minutes. If the specified temperature threshold or weather conditions are triggered, an email notification will be sent to the provided email address.
-   - The alert will continue to send notifications every 10 minutes until you delete the triggered alert from the alert management section.
+3. **Configure Alerts**
+   - Navigate to Alert Management
+   - Set up alerts with:
+     - City name
+     - Temperature thresholds
+     - Weather conditions
+     - Email address for notifications
 
-6. **Managing Alerts**
-   - Users can view current alerts, delete them, and see a list of triggered alerts. This allows for easy management and customization of alert settings.
+4. **Manage Alerts**
+   - View active alerts
+   - Check triggered alerts
+   - Delete unwanted alerts
 
-**Configuration**
-In the backend folder, replace this .env file with the following content:
-            # Database configuration
-            DB_USER=Your_Database_Username
-            DB_HOST=Your_Database_Host
-            DB_NAME=Your_Database_Name
-            DB_PASSWORD=2Your_Database_Password
-            DB_PORT=Your_Database_Port (5432)
-            
-            # Weather API configuration
-            WEATHER_API_KEY=Your_OpenweathermapAPI_Key
-            
-            # Server configuration
-            PORT=5000
-            
-            # Email configuration
-            EMAIL_USER=Your_Sender_Mail_Id  // sender mail id to send mails if alert triggers
-            EMAIL_PASS=App_Passwords   //enter app passwords
+## 🛠️ Tech Stack
+
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL
+- **Additional Tools:**
+  - Axios for API requests
+  - Nodemailer for email alerts
+
+## 📦 Dependencies
+
+### Frontend
+- React
+- Tailwind CSS
+- Axios
+
+### Backend
+- Express
+- dotenv
+- cors
+- pg (PostgreSQL client)
+- nodemailer
+
+## 🎯 Design Choices
+
+- **React:** Component-based architecture for maintainable UI
+- **Tailwind CSS:** Rapid styling and customization
+- **Express:** Efficient REST API handling
+- **PostgreSQL:** Reliable data storage
+- **Nodemailer:** Robust email notification system
+
+## 🔄 Update Frequencies
+
+- Metropolitan cities: Every 5 minutes
+- Alert checks: Every 10 minutes
