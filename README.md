@@ -38,8 +38,7 @@ This is a real-time weather application that provides users with weather data fo
 #### Frontend
 1. Clone the repository:~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   git clone <repository-url>
-
+   git clone https://github.com/SvickyB/Real_Time_Weather_Application.git
 2. Install Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 **********For Frontend**********
