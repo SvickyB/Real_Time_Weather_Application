@@ -35,26 +35,27 @@ This is a real-time weather application that provides users with weather data fo
 
 ### Setting Up the Application
 
-#### Frontend
-1. Clone the repository:~~~~~~~~
+###Clone the repository:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   git clone https://github.com/SvickyB/Real_Time_Weather_Application.git
-2. Install Dependencies
+git clone https://github.com/SvickyB/Real_Time_Weather_Application.git
+
+###Install Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
-**********For Frontend**********
+**For Frontend**
    cd frontend  // Navigate to your frontend project path
    npm install  // Install required depedencies for frontend
    npm start    // Start the frontend
 
 
 #### Backend
+**For Backend**
    cd ..  // navigate to previous path
    cd backend    // Navigate to your backend project path
    npm install   // Install required depedencies for backend
 
 #### Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Create the PostgreSQL Database:
+**Create the PostgreSQL Database:**
     
     Open your PostgreSQL client (e.g., pgAdmin or psql).
         OR
